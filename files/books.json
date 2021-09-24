@@ -1,0 +1,26 @@
+[
+  {    
+    "id": 1,
+    "name": "book1",
+    "publication_year": "1899",
+    "genre": "comedy"
+  }, 
+  {    
+    "id": 2,
+    "name": "book2",
+    "publication_year": "1899",
+    "genre": "comedy"
+  }, 
+  {    
+    "id": 3,
+    "name": "book3",
+    "publication_year": "1899",
+    "genre": "comedy"
+  }, 
+  {    
+    "id": 4,
+    "name": "book4",
+    "publication_year": "1899",
+    "genre": "comedy"
+  }
+]
