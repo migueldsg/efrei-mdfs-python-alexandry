@@ -4,36 +4,37 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css' ;
 
 import { NavBar } from "./components/NavBar";
 
 import { Books } from "./pages/Books";
+import { BooksForm } from "./pages/Books/BooksForm";
+
+import { Container } from 'react-bootstrap'
 
 export default function App() {
   return (
     <Router>
       <>
         <NavBar />
-        <Switch>
-          <Route exact path="/books">
-            <Books />
-          </Route>
-          <Route exact path="/books/add">
-            <Users />
-          </Route>
-          <Route exact path="/books/edit/:id">
-            <Home />
-          </Route>
-        </Switch>
+        <Container className="mt-5">
+          <Switch>
+            <Route exact path="/">
+              <Books />
+            </Route>
+            <Route exact path="/books">
+              <Books />
+            </Route>
+            <Route exact path="/books/add">
+              <BooksForm />
+            </Route>
+            <Route exact path="/books/edit/:id">
+              <BooksForm />
+            </Route>
+          </Switch>
+        </Container>
       </>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
