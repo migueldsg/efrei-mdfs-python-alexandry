@@ -15,9 +15,9 @@ const Books = () => {
   useEffect(() => {
     get().then(data => {
       if (response.ok) {
+        setBooks(data);
       }
     })
-    setBooks([{ name: 'toto', writer: 'rrrr', release_year: '1860'}]);
 
   }, []);
 
@@ -64,7 +64,7 @@ const Books = () => {
         </Table>)
         : (
           <Alert variant="danger">
-            {"Aucune livre pour le moment ! reviens plus tard :)"}
+            {"Aucun livre pour le moment ! Reviens plus tard :)"}
           </Alert>
         )
       }
