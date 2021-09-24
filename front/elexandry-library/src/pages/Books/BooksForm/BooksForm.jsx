@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const BooksForm = () => {
   const [formData, setFormData] = useState({});
   const [message, setMessage] = useState(null);
-  const { get, put, post, del, response } = useFetch(`${process.env.REACT_APP_API_URL}/books`);
+  const { get, put, post, del, response } = useFetch(`${process.env.REACT_APP_API_URL}/books`, { cachePolicy: 'network-only'});
   const history = useHistory();
   const { id } = useParams();
 

@@ -8,9 +8,8 @@ import { useHistory } from 'react-router-dom';
 
 const Books = () => {
   const [books, setBooks] = useState([]);
-  const { get, response } = useFetch(`${process.env.REACT_APP_API_URL}/books`);
+  const { get, response } = useFetch(`${process.env.REACT_APP_API_URL}/books`, { cachePolicy: 'network-only'});
   const history = useHistory();
-
 
   useEffect(() => {
     get().then(data => {
@@ -44,7 +43,7 @@ const Books = () => {
           <tbody>
             {books?.map(book => {
               return (
-                <tr>
+                <tr key={book.name}>
                   <td>{book.name}</td>
                   <td>{book.writer}</td>
                   <td>{book.release_year}</td>
@@ -52,7 +51,7 @@ const Books = () => {
                     <Button
                       type="submit"
                       variant="primary"
-                      onClick={(e) => history.push(`books/edit/${book.id}`)}
+                      onClick={(e) => history.push(`books/edit/${book.book_id}`)}
                     >
                        <FontAwesomeIcon icon={faEdit} />
                     </Button>
